@@ -1,0 +1,146 @@
+:root {
+  --main-transition: 0.35s;
+  --dark-color: #000;
+  --main-color: bisque;
+  --br: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  border: none;
+  transition: var(--main-transition);
+  cursor: pointer;
+  border-radius: var(--br);
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+  transition: var(--main-transition);
+}
+
+.d-none {
+  display: none !important;
+}
+
+.no-auth {
+  cursor: no-drop;
+  pointer-events: none;
+  position: relative;
+}
+
+.no-auth::after {
+  position: absolute;
+  content: "\f023";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 18px;
+  top: 50%;
+  left: -15px;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+
+header {
+  padding: 0rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-color);
+  color: var(--main-color);
+  height: 3.1rem;
+  position: relative;
+  z-index: 100;
+}
+
+header .logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+header nav a:hover {
+  color: rgb(213, 180, 119);
+}
+
+header button {
+  background-color: var(--main-color);
+  color: var(--dark-color);
+  padding: 0.5rem 2rem;
+  width: 120px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+header button:hover {
+  background-color: rgb(242, 213, 158);
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 0rem 3rem;
+  }
+
+  header .logo a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 0rem 1rem;
+  }
+
+  header .logo a {
+    font-size: 1.5rem;
+  }
+
+  header nav {
+    gap: 1.8rem;
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+  }
+
+  header button {
+    padding: 0.5rem 0.7rem;
+    width: 80px;
+  }
+}
+
+.main-style {
+  height: calc(100vh - 3.1rem);
+  background-color: var(--main-color);
+  border: 5px solid var(--dark-color);
+  border-top: none;
+  padding: 0rem 150px;
+}
+
+@media (max-width: 991px) {
+  .main-style {
+    padding: 0rem 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-style {
+    padding: 0rem 25px;
+  }
+}

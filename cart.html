@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+
+    <!-- Main Css File Sheet -->
+    <link rel="stylesheet" href="css/master.css">
+
+    <!-- cart css file -->
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a href="home.html">E-Com</a></div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+        <button class="log-in-out">Log In</button>
+    </header>
+
+
+    <main class="main-style-cart">
+        <h1> Welcome To Your Shopping Cart</h1>
+
+        <div id="buy" class="d-none">
+            <div class="box">
+                <h3 class="total-price"></h3>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <button id="clean">Clean Your Cart</button>
+        </div>
+
+        <p class="current-items"></p>
+
+        <section id="cart">
+            <!-- Cart Data Will Go Here -->
+        </section>
+    </main>
+
+    <script src="javascript/master.js"></script>
+</body>
+
+</html>
