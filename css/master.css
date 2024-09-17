@@ -106,7 +106,7 @@ header button:hover {
 
 @media (max-width: 767px) {
   header {
-    padding: 0rem 1rem;
+    padding: 0rem 0.4rem;
   }
 
   header .logo a {
@@ -123,24 +123,9 @@ header button:hover {
     padding: 0.5rem 0.7rem;
     width: 80px;
   }
-}
 
-.main-style {
-  height: calc(100vh - 3.1rem);
-  background-color: var(--main-color);
-  border: 5px solid var(--dark-color);
-  border-top: none;
-  padding: 0rem 150px;
-}
-
-@media (max-width: 991px) {
-  .main-style {
-    padding: 0rem 50px;
+  .no-auth::after {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 767px) {
-  .main-style {
-    padding: 0rem 25px;
-  }
-}

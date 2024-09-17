@@ -228,19 +228,6 @@ function createCartItems() {
 }
 
 function deleteItem(item) {
-    cartData.filter(e => e.id !== item.id);
-    window.localStorage.setItem("cartData", JSON.stringify(cartData));
-}
-
-// Clean cart and handle click only if cleanCart exists
-// function deleteItem(item) {
-//     // Fix: Use filter to create a new array excluding the target item
-//     cartData = cartData.filter((cartItem) => cartItem.id !== item.id);
-//     window.localStorage.setItem("cartData", JSON.stringify(cartData));
-//     createCartItems(); // Update cart UI after deletion
-// }
-
-function deleteItem(item) {
     // Find the index of the item to be deleted
     const index = cartData.findIndex((cartItem) => cartItem.id === item.id);
 
@@ -250,6 +237,14 @@ function deleteItem(item) {
         window.localStorage.setItem("cartData", JSON.stringify(cartData));
         createCartItems(); // Update cart UI
     }
+}
+
+// Clean cart and handle click only if cleanCart exists
+if (cleanCart) {
+    cleanCart.onclick = () => {
+        window.localStorage.removeItem('cartData');
+        window.location.href = "cart.html"; // Redirect to cart.html page
+    };
 }
 
 // Update Cart UI
