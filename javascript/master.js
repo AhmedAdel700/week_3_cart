@@ -233,11 +233,23 @@ function deleteItem(item) {
 }
 
 // Clean cart and handle click only if cleanCart exists
+// function deleteItem(item) {
+//     // Fix: Use filter to create a new array excluding the target item
+//     cartData = cartData.filter((cartItem) => cartItem.id !== item.id);
+//     window.localStorage.setItem("cartData", JSON.stringify(cartData));
+//     createCartItems(); // Update cart UI after deletion
+// }
+
 function deleteItem(item) {
-    // Fix: Use filter to create a new array excluding the target item
-    cartData = cartData.filter((cartItem) => cartItem.id !== item.id);
-    window.localStorage.setItem("cartData", JSON.stringify(cartData));
-    createCartItems(); // Update cart UI after deletion
+    // Find the index of the item to be deleted
+    const index = cartData.findIndex((cartItem) => cartItem.id === item.id);
+
+    // If the item was found, remove it from the cart data
+    if (index !== -1) {
+        cartData.splice(index, 1); // Remove one item from the specified index
+        window.localStorage.setItem("cartData", JSON.stringify(cartData));
+        createCartItems(); // Update cart UI
+    }
 }
 
 // Update Cart UI
