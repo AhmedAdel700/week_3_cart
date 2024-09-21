@@ -180,9 +180,10 @@
     align-items: center;
     flex-direction: column;
     background-color: #000000d3;
-    width: 360px;
+    width: 350px;
     min-height: fit-content;
     padding: 1rem;
+    margin: 0 0.5rem 1rem;
   }
 
   .pages-btns {
